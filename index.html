@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sridhar E - Embedded Systems & IoT Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind theme for custom colors and font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#007BFF', // Electric Blue for accent
+                        'secondary': '#333',
+                        'light-bg': '#f7f7f7', // Slightly off-white background
+                        'dark-text': '#1f2937', // Dark gray for main text
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for professional look and feel */
+        .skill-badge {
+            @apply inline-block px-4 py-2 bg-primary text-white text-sm font-semibold rounded-full shadow-md transition duration-300 hover:bg-blue-600 mb-2 mr-2;
+        }
+        /* Custom scroll indicator for the active section */
+        .nav-item.active a {
+            @apply text-primary font-bold border-b-2 border-primary;
+        }
+        /* Simple smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style for the mobile menu transition */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+        #mobile-menu.open {
+            max-height: 500px; /* Large enough value to cover content */
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-dark-text">
+
+    <!-- NAVIGATION BAR (Sticky) -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold text-primary tracking-wider">Sridhar E</a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8" id="desktop-nav">
+                    <a href="#home" class="text-lg font-medium hover:text-primary transition duration-150 nav-item" data-section="home">Home</a>
+                    <a href="#about" class="text-lg font-medium hover:text-primary transition duration-150 nav-item" data-section="about">About</a>
+                    <a href="#skills" class="text-lg font-medium hover:text-primary transition duration-150 nav-item" data-section="skills">Skills</a>
+                    <a href="#education" class="text-lg font-medium hover:text-primary transition duration-150 nav-item" data-section="education">Education</a>
+                    <a href="#contact" class="text-lg font-medium hover:text-primary transition duration-150 nav-item" data-section="contact">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden p-2 rounded-md text-dark-text hover:text-primary hover:bg-light-bg focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" aria-expanded="false">
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Panel -->
+        <div id="mobile-menu" class="md:hidden shadow-inner">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-light-bg nav-item" data-section="home">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-light-bg nav-item" data-section="about">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-light-bg nav-item" data-section="skills">Skills</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-light-bg nav-item" data-section="education">Education</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-dark-text hover:bg-light-bg nav-item" data-section="contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section id="home" class="flex items-center justify-center min-h-[75vh] bg-light-bg py-20 px-4">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="text-center md:text-left">
+                    <p class="text-xl font-medium text-primary mb-2 animate-bounce-slow">Hello World, I am</p>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 mb-4 leading-tight">Sridhar E</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">ECE'2028 | Embedded and IoT Enthusiast</h2>
+                    <p class="text-lg text-gray-600 max-w-lg mb-8">
+                        A dedicated Electrical, Electronics and Communications Engineering student at **Sri Eshwar College of Engineering**, specializing in cutting-edge **Embedded Systems and IoT** technologies.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-primary hover:bg-blue-600 transition duration-300 transform hover:scale-105">
+                        Get in Touch
+                    </a>
+                </div>
+                <!-- Placeholder for Image/Illustration (Mobile: hidden, Desktop: visible) -->
+                <div class="hidden md:block w-full max-w-xs lg:max-w-sm p-4 bg-white rounded-xl shadow-2xl border border-primary/20">
+                    <img src="https://placehold.co/400x400/007BFF/ffffff?text=IoT+Focus" alt="IoT and Embedded Systems Illustration Placeholder" class="rounded-lg w-full h-auto">
+                    <p class="text-center text-sm mt-2 text-gray-500">Focus: Hardware-Software Integration</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT/SKILLS SECTION (Combined for simplicity) -->
+        <section id="about" class="py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-900">About Me</h2>
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-gray-100">
+                    <p class="text-lg text-gray-600 mb-8">
+                        My journey is centered around Electrical, Electronics and Communications Engineering, with a strong passion for **Embedded Systems and the Internet of Things (IoT)**. I am committed to learning and applying these skills to create innovative solutions.
+                    </p>
+                    <hr class="my-8 border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6" id="skills">Top Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge">English</span>
+                        <span class="skill-badge">Engineering</span>
+                        <span class="skill-badge">Communication</span>
+                        <!-- Add domain-specific skills -->
+                        <span class="skill-badge">Embedded Systems</span>
+                        <span class="skill-badge">IoT</span>
+                        <span class="skill-badge bg-green-500 hover:bg-green-600">Hardware Prototyping</span>
+                        <span class="skill-badge bg-red-500 hover:bg-red-600">Microcontrollers</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. EDUCATION SECTION -->
+        <section id="education" class="py-16 px-4 sm:px-6 lg:px-8 bg-light-bg">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-center mb-12 text-gray-900">Education</h2>
+
+                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gray-300">
+                    <!-- Education Item 1 -->
+                    <div class="relative flex items-center justify-between md:justify-center md:odd:flex-row-reverse group is-active">
+                        <!-- Card Content -->
+                        <div class="flex items-center justify-start w-full mx-auto">
+                            <div class="w-full md:w-1/2 md:p-6 p-4">
+                                <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300 border-l-4 border-primary md:border-l-0 md:border-r-4">
+                                    <h3 class="text-xl font-bold text-gray-800">Sri Eshwar College of Engineering</h3>
+                                    <p class="text-primary font-medium my-1">Bachelor's degree</p>
+                                    <p class="text-sm text-gray-600">Electrical, Electronics and Communications Engineering</p>
+                                    <p class="text-xs text-gray-400 mt-2">2024 - 2028 (Expected)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Dot/Marker -->
+                        <div class="absolute left-5 z-10 hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-xl border-4 border-primary">
+                            <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm-1 12H7v-2h2v2zm0-4H7V8h2v2zm4 4h-2v-2h2v2zm0-4h-2V8h2v2z" /></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. CONTACT SECTION -->
+        <section id="contact" class="py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Let's Connect</h2>
+                <p class="text-lg text-gray-600 mb-8">
+                    I'm actively seeking opportunities to contribute my skills in Embedded Systems and IoT. Feel free to reach out!
+                </p>
+
+                <div class="bg-light-bg p-8 rounded-xl shadow-lg border border-gray-200 space-y-4">
+                    <div class="flex items-center justify-center gap-4">
+                        <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                        <a href="mailto:sridhxr18@gmail.com" class="text-lg text-primary hover:underline font-medium">sridhxr18@gmail.com</a>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-4">
+                        <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M16.3 3.6c.1 0 .2.1.2.2v12c0 .1-.1.2-.2.2h-12c-.1 0-.2-.1-.2-.2V3.8c0-.1.1-.2.2-.2h12zm-4 11.2V9.6h2.2l.3-2.5h-2.5V5.5c0-.7.2-1.2 1.3-1.2h1.2V2.3s-1.1-.2-2.3-.2c-2.4 0-4.1 1.5-4.1 4.2v2.4H6v2.5h2.2v5.2h2.5z"/></svg>
+                        <a href="https://www.linkedin.com/in/sridhar-e-b73a41333" target="_blank" class="text-lg text-gray-700 hover:text-primary hover:underline font-medium">LinkedIn Profile</a>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-4 text-gray-600">
+                        <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                        <span class="text-lg">Coimbatore, Tamil Nadu, India</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2025 Sridhar E. All rights reserved. Built with modern web standards.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('#desktop-nav a, #mobile-menu a');
+            const sections = document.querySelectorAll('section');
+
+            // --- Mobile Menu Toggle ---
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                const isExpanded = mobileMenu.classList.contains('open');
+                menuToggle.setAttribute('aria-expanded', isExpanded);
+            });
+
+            // --- Close mobile menu when a link is clicked ---
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // --- Scrollspy functionality to highlight active navigation link ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Highlight when 50% of the section is visible
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentSectionId = entry.target.id;
+                        // Remove active class from all links
+                        navLinks.forEach(link => link.classList.remove('active'));
+
+                        // Add active class to the corresponding link
+                        document.querySelectorAll(`[data-section="${currentSectionId}"]`).forEach(link => {
+                            link.classList.add('active');
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Observe each section
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Initialize the 'home' link as active on load if not scrolling
+            if (window.scrollY < sections[0].offsetHeight * 0.5) {
+                document.querySelectorAll(`[data-section="home"]`).forEach(link => link.classList.add('active'));
+            }
+
+        });
+    </script>
+</body>
+</html>
